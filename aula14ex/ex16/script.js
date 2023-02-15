@@ -4,7 +4,7 @@ function contar() {
     let passo = document.getElementById('txtp')
     let res = document.getElementById('res')
 
-    if (ini.value.legth == 0 || fim.value.length == 0 || passo.value.legth == 0) {
+    if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
         res.innerHTML = 'Impossivel contar!'
         //window.alert('[ERRO] Faltam dados!')
     } else {
@@ -14,7 +14,7 @@ function contar() {
         let p = Number(passo.value)
         if (p <= 0) {
             window.alert('Passo inválido! Considerando PASSO 1')
-            p - 1
+            p = 1
         }
         if (i < f) {
             //Contagem crescente
@@ -23,7 +23,7 @@ function contar() {
             }
         } else {
             //Contagem regressiva
-            for(let c = i; c >= f; c += p) {
+            for(let c = i; c >= f; c -= p) {
                 res.innerHTML += `${c} \u{1F449}`
             }
         }
